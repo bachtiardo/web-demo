@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Demo</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: url("bg.jpg") no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+}
+
+.box {
+    background: rgba(255,255,255,0.9);
+    width: 90%;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+button {
+    background: #0d6efd;
+    color: white;
+    border: none;
+}
+
+.hidden {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="awal">
+    <h1>SELAMAT DATANG</h1>
+    <button onclick="keIdentitas()">Mulai</button>
+</div>
+
+<div class="box hidden" id="identitas">
+    <h2>Isi Identitas</h2>
+    <input id="nama" placeholder="Nama">
+    <input id="nim" placeholder="NIM">
+    <button onclick="kePilihan()">Lanjut</button>
+</div>
+
+<div class="box hidden" id="pilihan">
+    <h2>Pilih Tahun</h2>
+    <button onclick="alert('2023')">2023</button>
+    <button onclick="alert('2024')">2024</button>
+    <button onclick="alert('2025')">2025</button>
+</div>
+
+<script>
+function keIdentitas() {
+    awal.classList.add("hidden");
+    identitas.classList.remove("hidden");
+}
+
+function kePilihan() {
+    if (nama.value === "" || nim.value === "") {
+        alert("Isi identitas dulu");
+        return;
+    }
+    identitas.classList.add("hidden");
+    pilihan.classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
